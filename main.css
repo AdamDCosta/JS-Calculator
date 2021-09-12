@@ -41,6 +41,12 @@ body {
   grid-column: 4/5;
 }
 
+@media screen and (1024px) {
+  .calculator {
+    height: 50vh;
+    width: auto;
+  }
+}
 .calculator__buttons button {
   font-size: 2rem;
   border: none;
