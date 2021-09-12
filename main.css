@@ -22,3 +22,10 @@ body {
   justify-content: center;
   align-items: center;
 }
+.calculator__cell--AC, .calculator__cell--zero {
+  grid-column: 1/3;
+}
+.calculator__cell--equals {
+  grid-row: 5/7;
+  grid-column: 4/5;
+}
