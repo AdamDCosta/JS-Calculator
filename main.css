@@ -41,14 +41,27 @@ body {
   grid-column: 4/5;
 }
 
-.calculator__buttons > button {
+.calculator__buttons button {
   font-size: 2rem;
-  color: #ebeaea;
-  background-color: rgba(75, 207, 238, 0.1);
-  border: 1px solid #ebeaea;
+  border: none;
   outline: none;
   min-height: 100%;
   min-width: 100%;
+}
+.calculator__buttons--number, .calculator__buttons--operator, .calculator__buttons--zero {
+  color: #ebeaea;
+  background-color: rgba(75, 207, 238, 0.1);
+}
+.calculator__buttons--AC {
+  background-color: #fb6b2e;
+  color: #ebeaea;
+}
+.calculator__buttons--equals {
+  background-color: #4bcfee;
+  color: #0c1942;
+}
+.calculator__buttons button:hover {
+  background-color: #020925;
 }
 
 .calculator__screen {

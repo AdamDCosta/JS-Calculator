@@ -2,15 +2,40 @@
 
 .calculator {
 
-  &__buttons > button {
+
+  &__buttons button {
     font-size: 2rem;
-    color: $color-white;
-    background-color: rgba(75,207,238, 0.1);
-    border: 1px solid $color-white;
+    // color: $color-white;
+    border: none;
+    // border: 1px solid $color-white;
     // border-radius: 50%;
     outline: none;
     min-height: 100%;
     min-width: 100%;
+  }
 
+  &__buttons {
+
+    &--number, &--operator, &--zero {
+      color: $color-white;
+      background-color: rgba(75,207,238, 0.1);
+    }
+
+    
+
+    &--AC {
+      background-color: $color-delete;
+      color: $color-white;
+    }
+
+    &--equals {
+      background-color: $color-blue-light;
+      color: $color-blue-dark;
+    } 
+    
+  }
+  
+  &__buttons button:hover {
+    background-color: $color-dark;
   }
 }
