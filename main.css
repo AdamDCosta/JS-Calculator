@@ -12,6 +12,7 @@ body {
   align-items: center;
   background: #020925;
   background: linear-gradient(90deg, #020925 30%, #0c1942 70%);
+  height: 100vh;
 }
 
 .calculator {
@@ -41,10 +42,11 @@ body {
   grid-column: 4/5;
 }
 
-@media screen and (1024px) {
+@media screen and (min-width: 1024px) {
   .calculator {
-    height: 50vh;
-    width: auto;
+    height: 60vh;
+    width: 30%;
+    box-shadow: 2px 10px 10px 2px #020925;
   }
 }
 .calculator__buttons button {
@@ -66,8 +68,25 @@ body {
   background-color: #4bcfee;
   color: #0c1942;
 }
-.calculator__buttons button:hover {
+.calculator__buttons--number:hover {
   background-color: #020925;
+  color: #4bcfee;
+}
+.calculator__buttons--operator:hover {
+  background-color: #020925;
+  color: #4bcfee;
+}
+.calculator__buttons--zero:hover {
+  background-color: #020925;
+  color: #4bcfee;
+}
+.calculator__buttons--equals:hover {
+  background-color: #020925;
+  color: #4bcfee;
+}
+.calculator__buttons--AC:hover {
+  background-color: #020925;
+  color: #fb6b2e;
 }
 
 .calculator__screen {
