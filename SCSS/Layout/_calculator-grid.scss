@@ -17,4 +17,12 @@
     grid-row: 5 / 7;
     grid-column: 4 / 5;
   }
+
+  &__cell-screen {
+    grid-column: 1 / -1;
+    height: 25vh;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
 }

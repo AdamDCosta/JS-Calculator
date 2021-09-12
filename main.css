@@ -29,3 +29,7 @@ body {
   grid-row: 5/7;
   grid-column: 4/5;
 }
+.calculator__cell-screen {
+  grid-column: 1/-1;
+  height: 25vh;
+}
