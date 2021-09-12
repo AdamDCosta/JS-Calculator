@@ -1,0 +1,21 @@
+@use "../Base/abstracts" as *;
+
+
+.calculator {
+
+  &__screen {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: $color-blue-light;
+    grid-column: 1 / 5;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    min-height: 100%;
+    min-width: 100%;
+    padding: 10px 10px;
+    font-size: 2rem;
+    
+  }
+
+}
