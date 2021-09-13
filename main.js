@@ -7,7 +7,8 @@ const operatorBtns = document.querySelectorAll(".calculator__buttons--operator")
 const equalsBtn = document.querySelector(".calculator__buttons--equals");
 const deleteBtn = document.querySelector(".calculator__buttons--AC");
 const decimalBtn = document.querySelector(".calculator__buttons--decimal");
-const displayScreen = document.querySelector(".calculator__screen");
+const displayScreen = document.querySelector(".calculator__screen--number");
+
 
 // How I think it should work//
 
@@ -27,7 +28,7 @@ const displayScreen = document.querySelector(".calculator__screen");
 //displayScreen needs a function to keep the display up to date
 
 const updateScreen = (number) => {
-  displayScreen.innerHTML = number;
+  displayScreen.textContent = number;
 }
 
 //variables needed
@@ -48,4 +49,33 @@ let total = 0;
 //FUNCTIONS - addEventListener - click
 
 //number buttons
+
+//loop through each button -> addeventlistener 'click' -> when click occurs it need to add the value of clicked button to the displayscreen
+
+numberBtns.forEach(numberBtn => {
+  numberBtn.addEventListener("click", (event) => {
+    if (initialNumber === 0) {
+      initialNumber = event.target.textContent;
+    }
+    else {
+      initialNumber += event.target.textContent;
+    }
+    updateScreen(initialNumber);
+    console.log(initialNumber);
+  })
+})
+
+// operator buttons
+
+operatorBtns.forEach(operatorBtn => {
+  operatorBtn.addEventListener("click", (event) => {
+    operator = event.target.value;
+
+    if (initialNumber) {
+      storedNumber = initialNumber;
+      initialNumber = "";
+    }
+
+  })
+})
 
