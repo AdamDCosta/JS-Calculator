@@ -16,7 +16,7 @@
 
   &__buttons {
 
-    &--number, &--operator, &--zero {
+    &--number, &--operator, &--zero, &--decimal {
       color: $color-white;
       background-color: rgba(75,207,238, 0.1);
     }
@@ -35,20 +35,13 @@
     
   }
   
-  &__buttons--number:hover {
+  &__buttons--number:hover, 
+  &__buttons--operator:hover, 
+  &__buttons--decimal:hover, 
+  &__buttons--zero:hover {
+
     background-color: $color-dark;
     color: $color-blue-light;
-  }
-
-  &__buttons--operator:hover {
-    background-color: $color-dark;
-    color: $color-blue-light;
-  }
-
-  &__buttons--zero:hover{
-    background-color: $color-dark;
-    color: $color-blue-light;
-
   }
 
   &__buttons--equals:hover {
