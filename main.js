@@ -46,16 +46,13 @@ const updateScreen = (number) => {
 
 //variables needed
 
-//-> currentNumber - initialNumber probs better, less confusing
+//-> currentNumber - number user is typing
 let currentNumber = "";
-// -> = newNumber - nextNumber? secondNumber?
+// -> = number typed before operator pressed
 let previousNumber = ""; // do I need this?
-// -> can currentNumber always be the total or do I need another variable eg,
-// --> totalNumber or storedNumber
-let storedNumber = 0;
-// -> operator (takes value of pressed operator)
+// -> operator (takes value of pressed operator - needed for when equals is pressed)
 let operator = "";
-// -> total (what the equals button will give as output)
+// -> total (what the equals button will give as output - will then need to become previousNumber if new numbers or operators are pressed)
 let total = 0;
 
 
@@ -80,7 +77,7 @@ numberBtns.forEach(numberBtn => {
   })
 })
 
-// operator buttons
+// operator buttons - currentNumber needs to be converted to number before operations
 
 operatorBtns.forEach(operatorBtn => {
   operatorBtn.addEventListener("click", (event) => {
@@ -119,7 +116,7 @@ equalsBtn.addEventListener("click", () => {
         break;
       case "divide":
         if (parseFloat(currentNumber) === 0) {
-          total = 0
+          total = "NOPE!"
         }
         else {
           total = previousNumber / parseFloat(currentNumber); 
@@ -130,8 +127,16 @@ equalsBtn.addEventListener("click", () => {
 
   updateScreen(total);
     // I need to clear currentNumber so that if I start typing new numbers they don't append to the total but start a new currentNumber
-  previousNumber = total
-  currentNumber = "";
+    // Also - make sure you can't add numbers to the "NOPE!" message
+
+  if (total === "NOPE!") {
+    previousNumber = "";
+    currentNumber = "";
+  }
+  else {
+    previousNumber = total
+    currentNumber = "";
+  }
 
   
 })
@@ -152,6 +157,14 @@ deleteBtn.addEventListener("click", () => {
 
 // decimal button
 
-decimalBtn.addEventListener("click", () => {
+//if currentNumber already includes a decimal the button value shouldn't be added to currentNumber
+//else currentNumber += event.target.innerHTML
 
+decimalBtn.addEventListener("click", (event) => {
+  if (!currentNumber.includes(event.target.innerHTML)) {
+
+    currentNumber += event.target.innerHTML
+  }
+    
+  updateScreen(currentNumber);
 })
