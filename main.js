@@ -14,23 +14,21 @@ const displayScreen = document.querySelector(".calculator__screen--number");
 
 // press a number -> value appears on screen -> stored eg 'currentNumber'
 
-// press another number -> value concatenated to first number -> updates 'currentNumber
+// press another number -> value concatenated to first number -> updates 'currentNumber'
 
 // press operator -> value appears on screen -> numbers stored -> eg, 'previousNumber'
 
-// press a number -> value appears on screen
+// press a number -> value appears on screen -> this is now 'currentNumber'
 
 // press another number -> value concatenated to first number etc
-
-// this second number is stored eg 'currentNumber' 
 
 // second number is then added/subtracted etc to 'previousNumber' once either equals is pressed or another operator
 
 // currentNumber is reset to 0 if the button was an operator
 
-// equals set to value of previousNumber?
+// equals  value stored as total/sum
 
-// the result is 'currentNumber'
+// sum then becomes previousNumber
 
 // if a number is typed next 'currentNumber' must be reset to 0 and take value of number just pressed 
 
