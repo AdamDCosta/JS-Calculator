@@ -118,17 +118,25 @@ equalsBtn.addEventListener("click", () => {
         total = previousNumber * parseFloat(currentNumber);  
         break;
       case "divide":
-        total = previousNumber / parseFloat(currentNumber); 
+        if (parseFloat(currentNumber) === 0) {
+          total = 0
+        }
+        else {
+          total = previousNumber / parseFloat(currentNumber); 
+        }
         break; 
     }
   // }
 
   updateScreen(total);
-
-  currentNumber = total;
+    // I need to clear currentNumber so that if I start typing new numbers they don't append to the total but start a new currentNumber
+  previousNumber = total
+  currentNumber = "";
 
   
 })
+
+// AC button - sets everything back to 0 or empty strings
 
 deleteBtn.addEventListener("click", () => {
   const clearScreen = () => {
@@ -139,4 +147,11 @@ deleteBtn.addEventListener("click", () => {
     updateScreen(0);
   }
   clearScreen();
+})
+
+
+// decimal button
+
+decimalBtn.addEventListener("click", () => {
+
 })
