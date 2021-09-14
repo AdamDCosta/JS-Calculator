@@ -11,20 +11,21 @@
 <body>
 
   <div class="calculator">
-    <div class="calculator__screen">123456789
+    <div class="calculator__screen">
+      <p class="calculator__screen--number">0</p>
     </div>
     <div class="calculator__buttons">
       <button class="calculator__buttons--AC">AC</button>
-      <button class="calculator__buttons--operator">÷</button>
-      <button class="calculator__buttons--operator">×</button>
+      <button class="calculator__buttons--operator" value="divide" id="div">÷</button>
+      <button class="calculator__buttons--operator" value="multiply" id="mult">×</button>
       <button class="calculator__buttons--number">7</button>
       <button class="calculator__buttons--number">8</button>
       <button class="calculator__buttons--number">9</button>
-      <button class="calculator__buttons--operator">-</button>
+      <button class="calculator__buttons--operator" value="minus" id="min">-</button>
       <button class="calculator__buttons--number">4</button>
       <button class="calculator__buttons--number">5</button>
       <button class="calculator__buttons--number">6</button>
-      <button class="calculator__buttons--operator">+</button>
+      <button class="calculator__buttons--operator" value="plus" id="add">+</button>
       <button class="calculator__buttons--number">1</button>
       <button class="calculator__buttons--number">2</button>
       <button class="calculator__buttons--number">3</button>
@@ -37,6 +38,6 @@
   
 
 
-  <style src="./main.js" ></style>
+  <script src="main.js"></script>
 </body>
 </html>
