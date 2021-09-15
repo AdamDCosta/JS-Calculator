@@ -7,8 +7,8 @@ const operatorBtns = document.querySelectorAll(".calculator__buttons--operator")
 const equalsBtn = document.querySelector(".calculator__buttons--equals");
 const deleteBtn = document.querySelector(".calculator__buttons--AC");
 const decimalBtn = document.querySelector(".calculator__buttons--decimal");
-const displayScreen = document.querySelector(".calculator__screen--number");
-
+const displayScreenCurrent = document.querySelector(".calculator__screen--current-number");
+const displayScreenPrevious = document.querySelector(".calculator__screen--previous-number");
 
 // How I think it should work//
 
@@ -36,11 +36,13 @@ const displayScreen = document.querySelector(".calculator__screen--number");
 
 //displayScreen needs a function to keep the display up to date
 
-const updateScreen = (number) => {
-  displayScreen.innerHTML = number;
+const updateScreenCurrent = (number) => {
+  displayScreenCurrent.innerHTML = number;
 }
 
-
+const updateScreenPrevious = (number) => {
+  displayScreenPrevious.innerHTML = number;
+}
 
 //variables needed
 
@@ -70,7 +72,15 @@ numberBtns.forEach(numberBtn => {
     else {
       currentNumber += event.target.innerHTML;
     }
-    updateScreen(currentNumber);
+    if (currentNumber.length < 22) {
+      updateScreenCurrent(currentNumber);
+    }
+    else {
+      displayScreenCurrent.classList.add("large-number");
+      displayScreenPrevious.classList.add("large-number");
+      updateScreenCurrent(currentNumber);
+    }
+
     console.log(currentNumber);
   })
 })
@@ -86,7 +96,8 @@ operatorBtns.forEach(operatorBtn => {
       currentNumber = "";
     }
 
-
+    updateScreenPrevious(previousNumber);
+    
 
     // updateScreen(operator); // Do I need this?
 
@@ -123,7 +134,8 @@ equalsBtn.addEventListener("click", () => {
     }
   // }
 
-  updateScreen(total);
+  updateScreenCurrent(total);
+  updateScreenPrevious(total);
     // I need to clear currentNumber so that if I start typing new numbers they don't append to the total but start a new currentNumber
     // Also - make sure you can't add numbers to the "NOPE!" message
 
@@ -147,7 +159,11 @@ deleteBtn.addEventListener("click", () => {
     previousNumber = "";
     operator = "";
     total = 0;
-    updateScreen(0);
+    displayScreenCurrent.classList.remove("large-number");
+    displayScreenPrevious.classList.remove("large-number");
+    updateScreenCurrent(0);
+    updateScreenPrevious(0);
+
   }
   clearScreen();
 })
@@ -164,5 +180,5 @@ decimalBtn.addEventListener("click", (event) => {
     currentNumber += event.target.innerHTML
   }
     
-  updateScreen(currentNumber);
+  updateScreenCurrent(currentNumber);
 })
