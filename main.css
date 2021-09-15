@@ -81,6 +81,10 @@ body {
   background-color: #020925;
   color: #fb6b2e;
 }
+.calculator__buttons--operator:focus {
+  background-color: #020925;
+  color: #4bcfee;
+}
 
 .calculator__screen {
   background-color: rgba(0, 0, 0, 0.75);
@@ -89,10 +93,21 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  flex-wrap: wrap;
+  word-wrap: break-word;
   word-break: break-all;
   min-height: 100%;
   min-width: 100%;
   padding: 10px 10px;
   font-size: 3rem;
+  position: relative;
+  line-height: 1;
+}
+.calculator__screen--previous-number {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.75;
+}
+.calculator .large-number {
+  font-size: 2rem;
 }

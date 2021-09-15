@@ -53,4 +53,12 @@
     background-color: $color-dark;
     color: $color-delete;
   }
+
+  &__buttons--operator:focus {
+    background-color: $color-dark;
+    color: $color-blue-light;
+  }
+
 }
+
+
