@@ -1,4 +1,5 @@
 @use "../Base/abstracts" as *;
+@use "../Base/mixins" as *;
 
 
 .calculator {
@@ -10,7 +11,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    // flex-wrap: wrap;
+    flex-wrap: wrap;
     word-wrap: break-word;
     word-break: break-all;
     min-height: 100%;
@@ -20,6 +21,10 @@
     position: relative;
     line-height: 1;
     
+    @include tablet {
+      font-size: 4rem;
+    }
+
     &--previous-number {
       position: absolute;
       top: 10px;
@@ -27,10 +32,16 @@
       opacity: 0.75;
     }
 
+
   }
 
   .large-number {
     font-size: 2rem;
+
+    @include tablet {
+      font-size: 3rem;
+    }
+
   }
 
 }
