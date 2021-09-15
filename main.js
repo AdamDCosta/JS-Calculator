@@ -89,6 +89,7 @@ numberBtns.forEach(numberBtn => {
 
 operatorBtns.forEach(operatorBtn => {
   operatorBtn.addEventListener("click", (event) => {
+
     operator = event.target.value;
 
     if (currentNumber) {
@@ -108,11 +109,11 @@ operatorBtns.forEach(operatorBtn => {
 
 
 equalsBtn.addEventListener("click", () => {
-  // if (!currentNumber && !previousNumber) {
-  //   total = 0
-  // }
+  if (currentNumber && !previousNumber) {
+    total = currentNumber;
+  }
 
-  // else {
+  else {
     switch(operator) {
       case "plus":
         total = previousNumber + parseFloat(currentNumber);
@@ -132,7 +133,7 @@ equalsBtn.addEventListener("click", () => {
         }
         break; 
     }
-  // }
+  }
 
   updateScreenCurrent(total);
   updateScreenPrevious(total);
