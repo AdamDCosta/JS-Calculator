@@ -5,10 +5,7 @@
 
   &__buttons button {
     font-size: 2rem;
-    // color: $color-white;
     border: none;
-    // border: 1px solid $color-white;
-    // border-radius: 50%;
     outline: none;
     min-height: 100%;
     min-width: 100%;
@@ -36,29 +33,25 @@
     
   }
   
-  &__buttons--number:hover, 
-  &__buttons--operator:hover, 
-  &__buttons--decimal:hover, 
-  &__buttons--zero:hover {
+    &__buttons--number:hover, 
+    &__buttons--operator:hover, 
+    &__buttons--decimal:hover, 
+    &__buttons--zero:hover,
+    &__buttons--equals:hover {
 
-    background-color: $color-dark;
-    color: $color-blue-light;
-  }
+      background-color: $color-dark;
+      color: $color-blue-light;
+    }
 
-  &__buttons--equals:hover {
-    background-color: $color-dark;
-    color: $color-blue-light;
-  }
+    &__buttons--AC:hover {
+      background-color: $color-dark;
+      color: $color-delete;
+    }
 
-  &__buttons--AC:hover {
-    background-color: $color-dark;
-    color: $color-delete;
-  }
-
-  &__buttons--operator:focus {
-    background-color: $color-dark;
-    color: $color-blue-light;
-  }
+    &__buttons--operator:focus {
+      background-color: $color-dark;
+      color: $color-blue-light;
+    }
 
 }
 
