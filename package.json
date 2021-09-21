@@ -1,0 +1,23 @@
+{
+  "name": "JS-Calculator",
+  "version": "1.0.0",
+  "description": "This repo contains the code for a mobile-first calculator app written in vanilla Javascript and styled with SCSS.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamDCosta/JS-Calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdamDCosta/JS-Calculator/issues"
+  },
+  "homepage": "https://github.com/AdamDCosta/JS-Calculator#readme",
+  "devDependencies": {
+    "cypress": "^8.4.1"
+  }
+}
